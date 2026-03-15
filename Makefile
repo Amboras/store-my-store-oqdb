@@ -32,7 +32,7 @@ dev-backend:
 
 dev-storefront:
 	@echo "🎨 Starting Next.js storefront..."
-	cd storefront-templates/minimal && npm run dev
+	cd storefront && npm run dev
 
 build:
 	@echo "🏗️  Building all workspaces..."

@@ -1,62 +1,68 @@
-# Ecommerce AI Builder - Starter Template
+# Ecommerce Starter Template
 
-AI-powered ecommerce store builder using Medusa v2 and Next.js.
+Dead simple ecommerce store template using Medusa v2 and Next.js.
 
 ## Quick Start
 
-### Prerequisites
-- Node.js 20+
-- PostgreSQL
-- Redis (optional but recommended)
-
-### Installation
-
 ```bash
-# Install dependencies
+# 1. Clone this repo
+git clone <your-repo-url> my-store
+cd my-store
+
+# 2. Install dependencies
 make install
 
-# Start development servers
+# 3. Start development
 make dev
 ```
 
-Backend runs at: http://localhost:9000
-Storefront runs at: http://localhost:3000
+**That's it!** Your store is running at:
+- Backend: http://localhost:9000
+- Storefront: http://localhost:3000
 
-## Claude Code Commands
+## Customize Your Store
 
 ```bash
-# Create a new store plan
-/create-store-plan
+# 1. Plan your customizations
+/create-plan
 
-# Implement the store
-/implement-store
+# 2. AI implements the plan
+/implement-plan
 
-# Edit an existing store
-/edit-store
-
-# Deploy store
-/deploy-store
+# 3. See your customized store
+make dev
 ```
 
-## Architecture
+The storefront gets customized in place - no generated folders, no complexity.
 
-- **Backend**: Medusa v2 (TypeScript/Node.js)
-- **Storefront**: Next.js 15
+## Tech Stack
+
+- **Backend**: Medusa v2 (headless commerce)
+- **Frontend**: Next.js 15 + React 19
 - **Database**: PostgreSQL
-- **Payments**: Stripe (built-in)
-- **AI**: Claude Code slash commands
+- **Payments**: Stripe
+- **Styling**: Tailwind CSS
 
 ## Project Structure
 
 ```
-ecom-starter-template/
-├── backend/              # Medusa backend
-├── storefront-templates/ # Next.js templates
-├── component-library/    # Reusable components
-├── .claude/             # Claude commands & agents
-└── generated-stores/    # Generated stores output
+my-store/
+├── backend/       # Medusa commerce engine
+├── storefront/    # Next.js storefront (customize this!)
+├── PLAN.md        # Your store plan (created by /create-plan)
+└── Makefile       # Simple commands
+```
+
+## Commands
+
+```bash
+make install       # Install dependencies
+make dev           # Start both backend + storefront
+make dev-backend   # Backend only
+make dev-storefront # Storefront only
+make stop          # Stop all services
 ```
 
 ## Documentation
 
-See `docs/` for detailed documentation.
+See [CLAUDE.md](./CLAUDE.md) for full documentation.
